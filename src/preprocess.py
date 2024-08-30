@@ -1,32 +1,78 @@
-import re
-import string
 import pandas as pd
+from sklearn.preprocessing import LabelEncoder, MinMaxScaler
+import re
 
-def clean_text(text):
-    text = text.lower() # Convierte el texto a minúsculas
-    text = re.sub(r'\[.*?\]', ' ', text) # Elimina cualquier texto entre corchetes
-    text = re.sub(r"\\W", " ", text) # Elimina cualquier carácter no alfanumérico
-    text = re.sub(r'https?://\S+|www\.\S+', ' ', text) # Elimina URLs
-    text = re.sub(r'<.*?>+', ' ', text) # Elimina cualquier etiqueta HTML
-    text = re.sub(r'[%s]' % re.escape(string.punctuation), ' ', text) # Elimina signos de puntuación
-    text = re.sub(r'\n', ' ', text) # Elimina saltos de línea
-    text = re.sub(r'\w*\d\w*', ' ', text) # Elimina palabras que contienen números
-   # text = re.sub('\s+', '', text)
-    return text
+def preprocess_jobs(file_path):
+    # Cargar el dataset de trabajos
+    jobs_df = pd.read_csv(file_path)
+    
+    def extract_ctc_values(ctc_value):
+        # Eliminar el símbolo de moneda y las comas
+        ctc_clean = ctc_value.replace('₹', '').replace(',', '')
+        # Encontrar todos los números
+        numbers = re.findall(r'\d+', ctc_clean)
+        if len(numbers) == 1:
+            # Solo un monto presente
+            return int(numbers[0]), int(numbers[0])
+        elif len(numbers) == 2:
+            # Rango presente
+            return int(numbers[0]), int(numbers[1])
+        else:
+            # Valor predeterminado en caso de error
+            return 0, 0
+    
+    # Aplicar la extracción de valores
+    jobs_df[['ctc_min', 'ctc_max']] = jobs_df['ctc'].apply(lambda x: pd.Series(extract_ctc_values(x)))
+    
+    # Codificar las ubicaciones y títulos de trabajo
+    le_location = LabelEncoder()
+    le_title = LabelEncoder()
+    jobs_df['location_encoded'] = le_location.fit_transform(jobs_df['location'])
+    jobs_df['job_title_encoded'] = le_title.fit_transform(jobs_df['job_title'])
+    
+    # Escalar los valores de CTC
+    scaler = MinMaxScaler()
+    jobs_df[['ctc_min_scaled', 'ctc_max_scaled']] = scaler.fit_transform(jobs_df[['ctc_min', 'ctc_max']])
 
-def preprocess_data(resume_df, job_df):
-    # Limpiar los textos de los CVs y las ofertas de empleo
-    resume_df['Resume'] = resume_df['Resume'].apply(clean_text)
-    job_df['job_title'] = job_df['job_title'].apply(clean_text)
+    print("Preprocesado del dataset job realizado")
+    
+    return jobs_df, le_location, le_title, scaler
 
-    return resume_df, job_df
+def preprocess_users(file_path, le_location, scaler):
+    # Cargar el dataset de usuarios
+    users_df = pd.read_csv(file_path)
+    
+    # Codificar las ubicaciones
+    users_df['location_encoded'] = le_location.transform(users_df['location'])
+    
+    # Extraer y escalar el CTC esperado
+    def extract_user_ctc_values(ctc_value):
+        # Eliminar el símbolo de moneda y las comas
+        ctc_clean = ctc_value.replace('₹', '').replace(',', '')
+        # Encontrar todos los números
+        numbers = re.findall(r'\d+', ctc_clean)
+        if len(numbers) == 1:
+            # Solo un monto presente
+            return int(numbers[0]), int(numbers[0])
+        elif len(numbers) == 2:
+            # Rango presente
+            return int(numbers[0]), int(numbers[1])
+        else:
+            # Valor predeterminado en caso de error
+            return 0, 0
 
-# Cargar los datasets
-resume_df = pd.read_csv('data/raw/resume.csv', encoding='utf-8')
-job_df = pd.read_csv('data/raw/job.csv', encoding='utf-8')
+    # Aplicar la extracción de valores
+    users_df[['ctc_min', 'ctc_max']] = users_df['expected_ctc'].apply(lambda x: pd.Series(extract_user_ctc_values(x)))
+    users_df[['ctc_min_scaled', 'ctc_max_scaled']] = scaler.transform(users_df[['ctc_min', 'ctc_max']])
+    
+    print("Preprocesado del dataset user_data realizado")
 
-resume_df, job_df = preprocess_data(resume_df, job_df)
+    return users_df
 
-# Guardar los datos preprocesados
-resume_df.to_csv('data/cleaned/resume_clean.csv', index=False, encoding='utf-8')
-job_df.to_csv('data/cleaned/job_clean.csv', index=False, encoding='utf-8')
+if __name__ == "__main__":
+    jobs_df, le_location, le_title, scaler = preprocess_jobs('data/raw/job.csv')
+    users_df = preprocess_users('data/raw/user_data.csv', le_location, scaler)
+    
+    # Guardar los datasets procesados
+    jobs_df.to_csv('data/processed/processed_jobs.csv', index=False)
+    users_df.to_csv('data/processed/processed_users.csv', index=False)
