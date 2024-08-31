@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JobMatcher</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <div class="logo">
+                <h1>JobMatcher AI</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Inicio</a></li>
+                    <li><a href="{{ url_for('search') }}">Buscador</a></li>
+                    <li class="profile-menu">
+                        <a href="{{ url_for('register_user') }}">Mi Perfil</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Imagen de fondo -->
+    <section class="hero">
+        <div class="hero-content">
+            <a href="{{ url_for('search') }}">
+                <button class="search-btn">Comienza tu búsqueda</button>
+            </a>
+        </div>
+    </section>
+
+    <!-- Carrusel de ofertas de empleo -->
+    <section class="job-carousel">
+        <h3>Ofertas de Empleo Recomendadas</h3>
+        <div class="carousel-container">
+            <div class="carousel-slide">
+                <div class="job-card" id="job-card-1">
+                    <h4 id="job-title-1"></h4>
+                    <p id="company-name-1"></p>
+                    <p id="location-1"></p>
+                </div>
+                <div class="job-card" id="job-card-2">
+                    <h4 id="job-title-2"></h4>
+                    <p id="company-name-2"></p>
+                    <p id="location-2"></p>
+                </div>
+                <div class="job-card" id="job-card-3">
+                    <h4 id="job-title-3"></h4>
+                    <p id="company-name-3"></p>
+                    <p id="location-3"></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 JobMatcher. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- JavaScript para carrusel -->
+    <script src="carousel.js"></script>
+</body>
+</html>

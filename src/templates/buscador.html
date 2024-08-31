@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Empleos - JobMatcher</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <div class="logo">
+                <h1>JobMatcher AI</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Inicio</a></li>
+                    <li><a href="{{ url_for('search') }}">Buscador</a></li>
+                    <li class="profile-menu">
+                        <a href="{{ url_for('register_user') }}">Mi Perfil</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Barra de Búsqueda -->
+    <section class="search-bar">
+        <form id="search-form">
+            <div class="search-container">
+                <input type="text" id="search-keywords" name="search-keywords" placeholder="Buscar empleos por palabras clave...">
+                <button type="submit" class="search-btn">
+                    <img src="../static/Lupa.png" alt="Buscar">
+                </button>
+            </div>
+        </form>
+    </section>
+    <!-- Resultados de la búsqueda -->
+    <section class="search-results">
+        <h3>Resultados de la Búsqueda</h3>
+        <div class="job-listing">
+            <!-- Aquí se agregarán los trabajos cargados desde el CSV -->
+        </div>
+    </section>
+    <script src="../static/script.js"></script>
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 JobMatcher. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

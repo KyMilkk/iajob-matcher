@@ -40,7 +40,7 @@ if __name__ == "__main__":
     
     model = build_model(X_train.shape[1])
     
-    model.fit(X_train, y_train, epochs=10, batch_size=32, validation_data=(X_test, y_test))
+    model.fit(X_train, y_train, epochs=20, batch_size=32, validation_data=(X_test, y_test))  # Aumentar épocas
     
-    # Guardar el modelo entrenado
-    model.save('job_recommendation_model.h5')
+    # Guardar el modelo entrenado en formato Keras
+    model.save('src/job_recommendation_model.keras')
