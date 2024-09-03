@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recomendaciones para {{ user.user_name }}</title>
+    <link rel="stylesheet" href="../static/styles.css"> <!-- Enlazar el CSS -->
+    <link rel="icon" href="../static/icon.png">
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <div class="logo">
+                <h1>JobMatcher AI</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Inicio</a></li>
+                    <li class="profile-menu">
+                        <a href="{{ url_for('register_user') }}">Mi Perfil</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="recommendations-container">
+            <h2>Recomendaciones de Empleos</h2>
+            <ul class="recommendations-list">
+                {% for rec in recommendations %}
+                    <li>
+                        <strong>{{ rec.job.job_title }}</strong>
+                        <span>Ubicación: {{ rec.job.location }}</span> <br>
+                        <span>Relevancia: {{ rec.score | round(2) }}</span>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </main>
+</body>
+</html>

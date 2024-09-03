@@ -1,0 +1,983 @@
+/* General Styles */ 
+
+body { 
+
+    font-family: Arial, sans-serif; 
+
+    margin: 0; 
+
+    padding: 0; 
+
+    box-sizing: border-box; 
+
+} 
+
+ 
+
+/* Banner Styles */ 
+
+.banner { 
+
+    background-color: rgba(0, 91, 181, 0.9); /* Color semitransparente */ 
+
+    color: white; 
+
+    padding: 10px 20px; 
+
+    display: flex; 
+
+    justify-content: space-between; 
+
+    align-items: center; 
+
+    position: relative; 
+
+} 
+
+ 
+
+.banner .logo h1 { 
+
+    margin: 0; 
+
+} 
+
+ 
+
+.banner nav ul { 
+
+    list-style: none; 
+
+    margin: 0; 
+
+    padding: 0; 
+
+    display: flex; 
+
+    align-items: center; 
+
+} 
+
+ 
+
+.banner nav ul li { 
+
+    margin-left: 20px; 
+
+    position: relative; 
+
+} 
+
+ 
+
+.banner nav ul li a { 
+
+    color: white; 
+
+    text-decoration: none; 
+
+    font-weight: bold; 
+
+} 
+
+ 
+
+.profile-menu:hover .dropdown { 
+
+    display: block; 
+
+} 
+
+ 
+
+/* Dropdown Menu */ 
+
+.dropdown { 
+
+    display: none; 
+
+    position: absolute; 
+
+    top: 100%; 
+
+    right: 0; 
+
+    background-color: white; 
+
+    padding: 10px; 
+
+    border-radius: 4px; 
+
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+
+} 
+
+ 
+
+.dropdown form { 
+
+    display: flex; 
+
+    flex-direction: column; 
+
+} 
+
+ 
+
+.dropdown label { 
+
+    margin: 5px 0; 
+
+    color: #333; 
+
+} 
+
+ 
+
+.dropdown input { 
+
+    padding: 8px; 
+
+    margin-bottom: 10px; 
+
+    border: 1px solid #ccc; 
+
+    border-radius: 4px; 
+
+} 
+
+ 
+
+.dropdown button { 
+
+    padding: 8px 16px; 
+
+    background-color: #005bb5; 
+
+    color: white; 
+
+    border: none; 
+
+    border-radius: 4px; 
+
+    cursor: pointer; 
+
+} 
+
+ 
+
+/* Hero Image Section */ 
+
+.hero { 
+
+    background-image: url('robot\ 3.jpeg'); 
+
+    background-size: cover; 
+
+    background-position: center; 
+
+    height: 60vh; 
+
+    display: flex; 
+
+    justify-content: center; 
+
+    align-items: center; 
+
+    position: relative; 
+
+} 
+
+ 
+
+.hero-content { 
+
+    text-align: center; 
+
+} 
+
+ 
+
+.hero .search-btn { 
+
+    padding: 12px 24px; 
+
+    background-color: #005bb5; 
+
+    color: white; 
+
+    border: none; 
+
+    border-radius: 5px; 
+
+    font-size: 18px; 
+
+    cursor: pointer; 
+
+} 
+
+.hero .texto {
+    
+    font-weight: bold; 
+
+    color: white; 
+
+    font-size: 22px; 
+
+}
+ 
+
+.hero .search-btn:hover { 
+
+    background-color: #004494; 
+
+} 
+
+ 
+
+/* Job Carousel Section */ 
+
+.job-carousel { 
+
+    padding: 20px; 
+
+    background-color: #f2f2f2; 
+
+    text-align: center; 
+
+} 
+
+ 
+
+.job-carousel h3 { 
+
+    margin-top: 0; 
+
+} 
+
+ 
+
+.carousel-container { 
+
+    overflow: hidden; 
+
+    max-width: 100%; 
+
+    position: relative; 
+
+} 
+
+ 
+
+.carousel-slide { 
+
+    display: flex; 
+
+    transition: transform 0.5s ease-in-out; 
+
+} 
+
+ 
+
+.job-card { 
+
+    background-color: #ffffff; 
+
+    border-radius: 8px; 
+
+    padding: 15px; 
+
+    margin: 0 10px; 
+
+    flex: 0 0 30%; 
+
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+
+} 
+
+ 
+
+.job-card h4 { 
+
+    margin: 0 0 10px; 
+
+} 
+
+ 
+
+.job-card p { 
+
+    margin: 5px 0; 
+
+} 
+
+ 
+
+/* Footer Styles */ 
+
+footer { 
+
+    background-color: #005bb5; 
+
+    color: white; 
+
+    text-align: center; 
+
+    padding: 10px 0; 
+
+    position: relative; 
+
+    bottom: 0; 
+
+    width: 100%; 
+
+} 
+
+/*buscador 
+
+/* General Styles */ 
+
+body { 
+
+    font-family: Arial, sans-serif; 
+
+    margin: 0; 
+
+    padding: 0; 
+
+    box-sizing: border-box; 
+
+} 
+
+ 
+
+/* Banner Styles */ 
+
+.banner { 
+
+    background-color: rgba(0, 91, 181, 0.9); /* Color semitransparente */ 
+
+    color: white; 
+
+    padding: 10px 20px; 
+
+    display: flex; 
+
+    justify-content: space-between; 
+
+    align-items: center; 
+
+    position: relative; 
+
+} 
+
+ 
+
+.banner .logo h1 { 
+
+    margin: 0; 
+
+} 
+
+ 
+
+.banner nav ul { 
+
+    list-style: none; 
+
+    margin: 0; 
+
+    padding: 0; 
+
+    display: flex; 
+
+    align-items: center; 
+
+} 
+
+ 
+
+.banner nav ul li { 
+
+    margin-left: 20px; 
+
+    position: relative; 
+
+} 
+
+ 
+
+.banner nav ul li a { 
+
+    color: white; 
+
+    text-decoration: none; 
+
+    font-weight: bold; 
+
+} 
+
+ 
+
+.profile-menu:hover .dropdown { 
+
+    display: block; 
+
+} 
+
+ 
+
+/* Dropdown Menu */ 
+
+.dropdown { 
+
+    display: none; 
+
+    position: absolute; 
+
+    top: 100%; 
+
+    right: 0; 
+
+    background-color: white; 
+
+    padding: 10px; 
+
+    border-radius: 4px; 
+
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
+
+} 
+
+ 
+
+.dropdown form { 
+
+    display: flex; 
+
+    flex-direction: column; 
+
+} 
+
+ 
+
+.dropdown label { 
+
+    margin: 5px 0; 
+
+    color: #333; 
+
+} 
+
+ 
+
+.dropdown input { 
+
+    padding: 8px; 
+
+    margin-bottom: 10px; 
+
+    border: 1px solid #ccc; 
+
+    border-radius: 4px; 
+
+} 
+
+ 
+
+.dropdown button { 
+
+    padding: 8px 16px; 
+
+    background-color: #005bb5; 
+
+    color: white; 
+
+    border: none; 
+
+    border-radius: 4px; 
+
+    cursor: pointer; 
+
+} 
+
+ 
+
+/* Search Bar Section */ 
+
+.search-bar { 
+
+    background-color: #f2f2f2; 
+
+    padding: 20px 0; 
+
+    text-align: center; 
+
+} 
+
+ 
+
+.search-container { 
+
+    display: inline-flex; 
+
+    border: 2px solid #ccc; 
+
+    border-radius: 8px; 
+
+    overflow: hidden; 
+
+    width: 80%; /* Aumenta el ancho de la barra de búsqueda */ 
+
+} 
+
+ 
+
+.search-container input { 
+
+    padding: 15px; 
+
+    border: none; 
+
+    outline: none; 
+
+    flex: 1; 
+
+    font-size: 18px; /* Aumenta el tamaño del texto */ 
+
+} 
+
+ 
+
+.search-container .search-btn { 
+
+    background-color: #005bb5; 
+
+    border: none; 
+
+    padding: 0 20px; 
+
+    display: flex; 
+
+    align-items: center; 
+
+    justify-content: center; 
+
+    cursor: pointer; 
+
+} 
+
+ 
+
+.search-container .search-btn img { 
+
+    width: 25px; /* Aumenta el tamaño de la lupa */ 
+
+    height: 25px; 
+
+} 
+
+ 
+
+/* Search Results Section */ 
+
+.search-results { 
+
+    padding: 20px; 
+
+} 
+
+ 
+
+.search-results h3 { 
+
+    margin-top: 0; 
+
+} 
+
+ 
+
+.job-listing { 
+
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+
+} 
+
+ 
+
+.job-card { 
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 300px;
+    
+} 
+
+ 
+
+.job-card h4 { 
+    margin: 0;
+    font-size: 18px;
+
+} 
+
+ 
+
+.job-card p { 
+
+    margin: 5px 0;
+
+} 
+
+ 
+
+.job-card button { 
+
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #005bb5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+} 
+
+ 
+
+.job-card button:hover { 
+
+    background-color: #004494;
+
+} 
+
+ 
+
+/* Footer Styles */ 
+
+footer { 
+
+    background-color: #005bb5; 
+
+    color: white; 
+
+    text-align: center; 
+
+    padding: 10px 0; 
+
+    position: relative; 
+
+    bottom: 0; 
+
+    width: 100%; 
+
+} 
+
+/*Mi perfil*/ 
+
+.profile-section { 
+
+    padding: 40px 20px; 
+
+    max-width: 800px; 
+
+    margin: 0 auto; 
+
+} 
+
+ 
+
+.profile-content { 
+
+    background-color: #f8f9fa; 
+
+    padding: 20px; 
+
+    border-radius: 8px; 
+
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); 
+
+} 
+
+ 
+
+.profile-content form { 
+
+    display: flex; 
+
+    flex-direction: column; 
+
+    margin-bottom: 20px; 
+
+} 
+
+ 
+
+.profile-content label { 
+
+    margin-bottom: 10px; 
+
+    font-weight: bold; 
+
+} 
+
+ 
+
+.profile-content input[type="file"] { 
+
+    margin-bottom: 20px; 
+
+} 
+
+ 
+
+.upload-btn, .analyze-btn { 
+
+    background-color: #005bb5; 
+
+    color: white; 
+
+    padding: 10px 20px; 
+
+    border: none; 
+
+    border-radius: 8px; 
+
+    font-size: 16px; 
+
+    cursor: pointer; 
+
+} 
+
+ 
+
+.upload-btn:hover, .analyze-btn:hover { 
+
+    background-color: #004494; 
+
+} 
+
+ 
+
+.ai-analysis { 
+
+    margin-top: 30px; 
+
+} 
+
+ 
+
+#analysis-results { 
+
+    margin-top: 20px; 
+
+    background-color: #e9ecef; 
+
+    padding: 15px; 
+
+    border-radius: 8px; 
+
+} 
+#user-form {
+    
+    padding: 20px;
+    border-radius: 8px; /* Bordes redondeados */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+    max-width: 500px; /* Ancho máximo del formulario */
+    margin: 0 auto; /* Centrando el formulario */
+}
+
+#user-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+#user-form input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+#user-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #005bb5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#user-form button:hover {
+    background-color: #004494;
+}
+
+/* Estilos para el formulario de registro */
+.register-form {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.register-form input,
+.register-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.register-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #005bb5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-form button:hover {
+    background-color: #004494;
+}
+
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para la sección de recomendaciones */
+.recommendations-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recommendations-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #005bb5;
+    text-align: center;
+}
+
+/* Estilo para la lista de recomendaciones */
+.recommendations-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recommendations-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+.recommendations-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recommendations-list li {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.recommendations-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.recommendations-list li strong {
+    display: block;
+    font-size: 18px;
+    color: #005bb5;
+    margin-bottom: 5px;
+}
+
+.recommendations-list li span {
+    color: #666;
+    font-size: 14px;
+}
+
+.benefits-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.benefit-card {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 150px; /* Ajusta la altura según sea necesario */
+    object-fit: cover; /* Para asegurarte de que la imagen se vea bien */
+    border-bottom: 1px solid #ddd;
+}
+
+.benefit-card .card-title {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.benefit-card .card-text {
+    font-size: 14px;
+    color: #777;
+}
+}

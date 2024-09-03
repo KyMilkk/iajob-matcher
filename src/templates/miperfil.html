@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Usuario</title>
+    <link rel="stylesheet" href="../static/styles.css"> <!-- Enlazar el CSS -->
+    <link rel="icon" href="../static/icon.png">
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <div class="logo">
+                <h1>JobMatcher AI</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Inicio</a></li>
+                    <li class="profile-menu">
+                        <a href="{{ url_for('register_user') }}">Mi Perfil</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <h1>Registrar Usuario</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <form class="register-form" method="POST"> <!-- Aplicar la clase del formulario -->
+            <label for="user_name">Nombre:</label>
+            <input type="text" id="user_name" name="user_name" required><br>
+
+            <label for="location">Ubicación:</label>
+            <input type="text" id="location" name="location" required><br>
+
+            <label for="preferred_start_date">Fecha de Inicio Preferida:</label>
+            <input type="date" id="preferred_start_date" name="preferred_start_date"><br>
+
+            <label for="expected_ctc">CTC Esperado:</label>
+            <input type="text" id="expected_ctc" name="expected_ctc" required><br>
+
+            <label for="experience">Experiencia:</label>
+            <input type="text" id="experience" name="experience" required><br>
+
+            <label for="skills">Habilidades:</label>
+            <textarea id="skills" name="skills" required></textarea><br>
+
+            <button type="submit">Registrar</button>
+        </form>
+    </main>
+    <!-- Footer -->
+    <footer>
+      <p>© 2024 JobMatcher. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>
