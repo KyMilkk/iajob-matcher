@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.preprocessing import LabelEncoder, MinMaxScaler
 import re
+import pickle
 
 def preprocess_jobs(file_path):
     # Cargar el dataset de trabajos
@@ -34,6 +35,9 @@ def preprocess_jobs(file_path):
     scaler = MinMaxScaler()
     jobs_df[['ctc_min_scaled', 'ctc_max_scaled']] = scaler.fit_transform(jobs_df[['ctc_min', 'ctc_max']])
 
+        # Guardar los datos procesados para depuración
+    jobs_df.to_csv('data/processed/debug_processed_jobs.csv', index=False)
+
     print("Preprocesado del dataset job realizado")
     
     return jobs_df, le_location, le_title, scaler
@@ -65,6 +69,8 @@ def preprocess_users(file_path, le_location, scaler):
     users_df[['ctc_min', 'ctc_max']] = users_df['expected_ctc'].apply(lambda x: pd.Series(extract_user_ctc_values(x)))
     users_df[['ctc_min_scaled', 'ctc_max_scaled']] = scaler.transform(users_df[['ctc_min', 'ctc_max']])
     
+    users_df.to_csv('data/processed/debug_processed_users.csv', index=False)
+
     print("Preprocesado del dataset user_data realizado")
 
     return users_df
@@ -76,3 +82,14 @@ if __name__ == "__main__":
     # Guardar los datasets procesados
     jobs_df.to_csv('data/processed/processed_jobs.csv', index=False)
     users_df.to_csv('data/processed/processed_users.csv', index=False)
+
+
+# Guardar LabelEncoders y Scaler
+with open('src/le_location.pkl', 'wb') as f:
+    pickle.dump(le_location, f)
+
+with open('src/le_title.pkl', 'wb') as f:
+    pickle.dump(le_title, f)
+
+with open('src/scaler.pkl', 'wb') as f:
+    pickle.dump(scaler, f)

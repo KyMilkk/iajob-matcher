@@ -1,84 +1,63 @@
-<form id="user-form">
-    <!DOCTYPE html> 
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Usuario</title>
+    <link rel="stylesheet" href="../static/styles.css"> <!-- Enlazar el CSS -->
+    <link rel="icon" href="../static/icon.png">
+</head>
+<body>
+    <header>
+        <div class="banner">
+            <div class="logo">
+                <h1>JobMatcher AI</h1>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('home') }}">Inicio</a></li>
+                    <li class="profile-menu">
+                        <a href="{{ url_for('register_user') }}">Mi Perfil</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+    <main>
+        <h1>Registrar Usuario</h1>
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for category, message in messages %}
+              <div class="flash {{ category }}">{{ message }}</div>
+            {% endfor %}
+          {% endif %}
+        {% endwith %}
+        <form class="register-form" method="POST"> <!-- Aplicar la clase del formulario -->
+            <label for="user_name">Nombre:</label>
+            <input type="text" id="user_name" name="user_name" required><br>
 
-    <html lang="es"> 
-    
-    <head> 
-    
-        <meta charset="UTF-8"> 
-    
-        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    
-        <title>Buscador de Empleos - JobMatcher</title> 
-    
-        <link rel="stylesheet" href="../static/styles.css"> 
-    
-    </head> 
-    
-    <body> 
-    
-        <header> 
-    
-            <div class="banner"> 
-    
-                <div class="logo"> 
-    
-                    <h1>JobMatcher AI</h1> 
-    
-                </div> 
-    
-                <nav> 
-    
-                    <ul> 
-    
-                        <li><a href="{{ url_for('home') }}">Inicio</a></li> 
-    
-                        <li><a href="{{ url_for('search') }}">Buscador</a></li> 
-    
-                        <li class="profile-menu"> 
-    
-                            <a href="{{ url_for('register_user') }}">Mi Perfil</a> 
-    
-    
-                        </li> 
-    
-                    </ul> 
-    
-                </nav> 
-    
-            </div> 
-    
-        </header> 
-    
-        <form id="user-form"action="/generat e-cv" method="post" >
-            <label for="name">Nombre Completo:</label>
-            <input type="text" id="name" name="name" required>
-        
             <label for="location">Ubicación:</label>
-            <input type="text" id="location" name="location" required>
-        
-            <label for="start-date">Fecha de Inicio Preferida:</label>
-            <input type="date" id="start-date" name="start-date" required>
-        
-            <label for="expected-ctc">Expectativa Salarial:</label>
-            <input type="text" id="expected-ctc" name="expected-ctc" required>
-        
-            <label for="experience">Experiencia (en años):</label>
-            <input type="number" id="experience" name="experience" required>
-        
+            <input type="text" id="location" name="location" required><br>
+
+            <label for="preferred_start_date">Fecha de Inicio Preferida:</label>
+            <input type="date" id="preferred_start_date" name="preferred_start_date"><br>
+
+            <label for="expected_ctc">CTC Esperado:</label>
+            <input type="text" id="expected_ctc" name="expected_ctc" required><br>
+
+            <label for="experience">Experiencia:</label>
+            <input type="text" id="experience" name="experience" required><br>
+
             <label for="skills">Habilidades:</label>
-            <input type="text" id="skills" name="skills" placeholder="Ej: Python, Machine Learning" required>
-        
-            <button type="submit">Generar Currículum</button>
+            <textarea id="skills" name="skills" required></textarea><br>
+
+            <button type="submit">Registrar</button>
         </form>
-        <div id="cv-output"></div>
-       
-        <footer> 
-    
-            <p>© 2024 JobMatcher. Todos los derechos reservados.</p> 
-    
-        </footer> 
-    
-    </body> 
-    
-    </html> 
+    </main>
+    <!-- Footer -->
+    <footer>
+      <p>© 2024 JobMatcher. Todos los derechos reservados.</p>
+  </footer>
+</body>
+</html>

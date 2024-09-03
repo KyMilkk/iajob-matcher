@@ -21,6 +21,10 @@ class Job(db.Model):
     ctc_max = db.Column(db.Integer)
     required_experience = db.Column(db.String(50))
     skills = db.Column(db.Text)
+    job_title_encoded = db.Column(db.Integer, nullable=True)
+    location_encoded = db.Column(db.Integer, nullable=True)
+    ctc_min_scaled = db.Column(db.Float, nullable=True)
+    ctc_max_scaled = db.Column(db.Float, nullable=True)
 
     recommendations = db.relationship('Recommendation', backref='job', lazy=True)
 

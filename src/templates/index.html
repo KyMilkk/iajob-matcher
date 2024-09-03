@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JobMatcher</title>
     <link rel="stylesheet" href="../static/styles.css">
+    <link rel="icon" href="../static/icon.png">
 </head>
 <body>
     <header>
@@ -15,7 +16,6 @@
             <nav>
                 <ul>
                     <li><a href="{{ url_for('home') }}">Inicio</a></li>
-                    <li><a href="{{ url_for('search') }}">Buscador</a></li>
                     <li class="profile-menu">
                         <a href="{{ url_for('register_user') }}">Mi Perfil</a>
                     </li>
@@ -27,35 +27,53 @@
     <!-- Imagen de fondo -->
     <section class="hero">
         <div class="hero-content">
-            <a href="{{ url_for('search') }}">
+            {% if user_name %}
+            <p class="texto">Hola, {{ user_name }}!</p>  <!-- Mostrar el nombre del usuario -->
+            <a href="{{ url_for('get_recommendations', user_id=session.user_id) }}">
                 <button class="search-btn">Comienza tu búsqueda</button>
             </a>
+            {% else %}
+            <a href="{{ url_for('register_user') }}">
+                <button class="search-btn">Comienza tu búsqueda</button>
+            </a>
+            {% endif %}
         </div>
     </section>
 
-    <!-- Carrusel de ofertas de empleo -->
-    <section class="job-carousel">
-        <h3>Ofertas de Empleo Recomendadas</h3>
-        <div class="carousel-container">
-            <div class="carousel-slide">
-                <div class="job-card" id="job-card-1">
-                    <h4 id="job-title-1"></h4>
-                    <p id="company-name-1"></p>
-                    <p id="location-1"></p>
+    <!-- Cartas de beneficios -->
+    <div class="benefits-container">
+        <h2 class="text-center">Beneficios de Usar Job Matcher IA</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card benefit-card">
+                    <img src="../static/card1.jpg" class="card-img-top" alt="Recomendaciones Personalizadas">
+                    <div class="card-body">
+                        <h5 class="card-title">Recomendaciones Personalizadas</h5>
+                        <p class="card-text">Recibe ofertas de trabajo que se ajustan a tu perfil y experiencia. Nuestra IA analiza tus habilidades para ofrecerte las mejores oportunidades.</p>
+                    </div>
                 </div>
-                <div class="job-card" id="job-card-2">
-                    <h4 id="job-title-2"></h4>
-                    <p id="company-name-2"></p>
-                    <p id="location-2"></p>
+            </div>
+            <div class="col-md-4">
+                <div class="card benefit-card">
+                    <img src="../static/card2.jpg" class="card-img-top" alt="Acceso a Empresas Líderes">
+                    <div class="card-body">
+                        <h5 class="card-title">Acceso a Empresas Líderes</h5>
+                        <p class="card-text">Conéctate con empresas destacadas en el mercado y encuentra el trabajo que siempre has deseado en compañías reconocidas.</p>
+                    </div>
                 </div>
-                <div class="job-card" id="job-card-3">
-                    <h4 id="job-title-3"></h4>
-                    <p id="company-name-3"></p>
-                    <p id="location-3"></p>
+            </div>
+            <div class="col-md-4">
+                <div class="card benefit-card">
+                    <img src="../static/card3.jpg" class="card-img-top" alt="Proceso Rápido y Sencillo">
+                    <div class="card-body">
+                        <h5 class="card-title">Proceso Rápido y Sencillo</h5>
+                        <p class="card-text">Nuestro proceso de aplicación es rápido y fácil de usar, permitiéndote aplicar a múltiples trabajos en minutos.</p>
+                    </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
+    
 
     <!-- Footer -->
     <footer>

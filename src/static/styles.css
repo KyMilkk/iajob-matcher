@@ -216,6 +216,15 @@ body {
 
 } 
 
+.hero .texto {
+    
+    font-weight: bold; 
+
+    color: white; 
+
+    font-size: 22px; 
+
+}
  
 
 .hero .search-btn:hover { 
@@ -812,4 +821,163 @@ footer {
 
 #user-form button:hover {
     background-color: #004494;
+}
+
+/* Estilos para el formulario de registro */
+.register-form {
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+.register-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    color: #333;
+}
+
+.register-form input,
+.register-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+.register-form button {
+    width: 100%;
+    padding: 12px;
+    background-color: #005bb5;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.register-form button:hover {
+    background-color: #004494;
+}
+
+
+/* Estilos generales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para la sección de recomendaciones */
+.recommendations-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recommendations-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #005bb5;
+    text-align: center;
+}
+
+/* Estilo para la lista de recomendaciones */
+.recommendations-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.recommendations-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+    font-size: 24px;
+}
+
+.recommendations-list {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.recommendations-list li {
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.recommendations-list li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.recommendations-list li strong {
+    display: block;
+    font-size: 18px;
+    color: #005bb5;
+    margin-bottom: 5px;
+}
+
+.recommendations-list li span {
+    color: #666;
+    font-size: 14px;
+}
+
+.benefits-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+    text-align: center;
+}
+
+.benefit-card {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+}
+
+.benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card-img-top {
+    width: 100%;
+    height: 150px; /* Ajusta la altura según sea necesario */
+    object-fit: cover; /* Para asegurarte de que la imagen se vea bien */
+    border-bottom: 1px solid #ddd;
+}
+
+.benefit-card .card-title {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.benefit-card .card-text {
+    font-size: 14px;
+    color: #777;
+}
 }

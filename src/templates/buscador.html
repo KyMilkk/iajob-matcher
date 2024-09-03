@@ -2,49 +2,68 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Buscador de Empleos - JobMatcher</title>
-    <link rel="stylesheet" href="../static/styles.css">
+    <title>Registrar Usuario</title>
+    <!-- Incluir Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .form-container {
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            background-color: #ffffff;
+            border-radius: 5px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .flash {
+            margin-bottom: 20px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="banner">
-            <div class="logo">
-                <h1>JobMatcher AI</h1>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="{{ url_for('home') }}">Inicio</a></li>
-                    <li><a href="{{ url_for('search') }}">Buscador</a></li>
-                    <li class="profile-menu">
-                        <a href="{{ url_for('register_user') }}">Mi Perfil</a>
-                    </li>
-                </ul>
-            </nav>
+    <div class="container mt-5">
+        <div class="form-container">
+            <h1 class="text-center mb-4">Registrar Usuario</h1>
+            {% with messages = get_flashed_messages(with_categories=true) %}
+              {% if messages %}
+                {% for category, message in messages %}
+                  <div class="alert alert-{{ category }}">{{ message }}</div>
+                {% endfor %}
+              {% endif %}
+            {% endwith %}
+            <form method="POST">
+                <div class="mb-3">
+                    <label for="user_name" class="form-label">Nombre:</label>
+                    <input type="text" id="user_name" name="user_name" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="location" class="form-label">Ubicación:</label>
+                    <input type="text" id="location" name="location" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="preferred_start_date" class="form-label">Fecha de Inicio Preferida:</label>
+                    <input type="date" id="preferred_start_date" name="preferred_start_date" class="form-control">
+                </div>
+                <div class="mb-3">
+                    <label for="expected_ctc" class="form-label">CTC Esperado:</label>
+                    <input type="text" id="expected_ctc" name="expected_ctc" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="experience" class="form-label">Experiencia:</label>
+                    <input type="text" id="experience" name="experience" class="form-control" required>
+                </div>
+                <div class="mb-3">
+                    <label for="skills" class="form-label">Habilidades:</label>
+                    <textarea id="skills" name="skills" class="form-control" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Registrar</button>
+            </form>
         </div>
-    </header>
-    <!-- Barra de Búsqueda -->
-    <section class="search-bar">
-        <form id="search-form">
-            <div class="search-container">
-                <input type="text" id="search-keywords" name="search-keywords" placeholder="Buscar empleos por palabras clave...">
-                <button type="submit" class="search-btn">
-                    <img src="../static/Lupa.png" alt="Buscar">
-                </button>
-            </div>
-        </form>
-    </section>
-    <!-- Resultados de la búsqueda -->
-    <section class="search-results">
-        <h3>Resultados de la Búsqueda</h3>
-        <div class="job-listing">
-            <!-- Aquí se agregarán los trabajos cargados desde el CSV -->
-        </div>
-    </section>
-    <script src="../static/script.js"></script>
-    <!-- Footer -->
-    <footer>
-        <p>© 2024 JobMatcher. Todos los derechos reservados.</p>
-    </footer>
+    </div>
+    <!-- Incluir Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.3.0/js/bootstrap.min.js"></script>
 </body>
 </html>

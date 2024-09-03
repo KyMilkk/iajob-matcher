@@ -39,15 +39,15 @@ user_id,user_name,location,preferred_start_date,expected_ctc,experience,skills,
 38,Ravi Patel,Ahmedabad,2024-08-28,"₹ 4,00,000 - 4,50,000",5-6 years,C#,ASP.NET
 39,Sophia Li,Gurgaon,2024-09-01,"₹ 2,50,000 - 3,50,000",2-3 years,Ruby on Rails,Web Development
 40,Arjun Desai,Surat,2024-09-10,"₹ 3,50,000 - 4,00,000",3-4 years,Kotlin,Android Development
-41,Laura Brown,Patna,2024-08-31,"₹ 2,00,000 - 3,00,000",1-2 years,Go,Backend Development
-42,Ajay Mishra,Visakhapatnam,2024-09-05,"₹ 3,75,000 - 4,75,000",4-5 years,Swift,iOS Development
-43,Neha Verma,Lucknow,2024-09-15,"₹ 2,50,000 - 3,50,000",2-3 years,Scala,Big Data
-44,Yusuf Khan,Nagpur,2024-08-25,"₹ 3,00,000 - 4,00,000",3-4 years,Perl,Scripting
-45,Claire Jones,Thiruvananthapuram,2024-09-20,"₹ 4,50,000 - 5,50,000",5-6 years,JavaScript,Vue.js
+41,Laura Brown,Surat,2024-08-31,"₹ 2,00,000 - 3,00,000",1-2 years,Go,Backend Development
+42,Ajay Mishra,Pune,2024-09-05,"₹ 3,75,000 - 4,75,000",4-5 years,Swift,iOS Development
+43,Neha Verma,Delhi,2024-09-15,"₹ 2,50,000 - 3,50,000",2-3 years,Scala,Big Data
+44,Yusuf Khan,Delhi,2024-08-25,"₹ 3,00,000 - 4,00,000",3-4 years,Perl,Scripting
+45,Claire Jones,Work from home,2024-09-20,"₹ 4,50,000 - 5,50,000",5-6 years,JavaScript,Vue.js
 46,Vikram Mehta,Indore,2024-09-25,"₹ 2,75,000 - 3,75,000",2-3 years,Rust,System Programming
 47,Alisha Fernandez,Bhopal,2024-08-28,"₹ 3,00,000 - 4,00,000",3-4 years,Python,Data Analytics
-48,Manish Gupta,Kanpur,2024-09-01,"₹ 2,50,000 - 3,50,000",1-2 years,Java,Microservices
-49,Lily Chen,Kanpur,2024-09-10,"₹ 3,50,000 - 4,50,000",4-5 years,JavaScript,Angular
+48,Manish Gupta,Work from home,2024-09-01,"₹ 2,50,000 - 3,50,000",1-2 years,Java,Microservices
+49,Lily Chen,Work from home,2024-09-10,"₹ 3,50,000 - 4,50,000",4-5 years,JavaScript,Angular
 50,Aman Kumar,Coimbatore,2024-08-31,"₹ 2,00,000 - 2,50,000",0-1 years,Python,Web Scraping
 51,Emma Watson,Chennai,2024-09-01,"₹ 2,00,000 - 2,16,000",0-2 years,Music Tracker,
 52,Liam Smith,Bangalore,2024-09-05,"₹ 2,20,000 - 4,20,000",0-2 years,Business Development Executive,
